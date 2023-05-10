@@ -1,47 +1,48 @@
+
 #include "main.h"
 
-int check_palindrome(char *s, int i, int len);
-int get_string_length(char *s);
+int check_pal(char *str, int start, int len);
+int _strlen_recursion(char *str);
 
 /**
  * is_palindrome - checks if a string is a palindrome
- * @s: string to reverse
+ * @str: string to reverse
  *
- * Return: 1 if it is, 0 if it's not
+ * Return: 1 if it is, 0 it's not
  */
-int is_palindrome(char *s)
+int is_palindrome(char *str)
 {
-	if (*s == 0)
+	if (*str == 0)
 		return (1);
-	return (check_palindrome(s, 0, get_string_length(s)));
+	return (check_pal(str, 0, _strlen_recursion(str)));
 }
 
 /**
- * get_string_length - returns the length of a string
- * @s: string to calculate the length of
+ * _strlen_recursion - returns the length of a string
+ * @str: string to calculate the length of
  *
  * Return: length of the string
  */
-int get_string_length(char *s)
+int _strlen_recursion(char *str)
 {
-	if (*s == '\0')
+	if (*str == '\0')
 		return (0);
-	return (1 + get_string_length(s + 1));
+	return (1 + _strlen_recursion(str + 1));
 }
 
 /**
- * check_palindrome - checks the characters recursively for palindrome
- * @s: string to check
- * @i: iterator
+ * check_pal - checks the characters recursively for palindrome
+ * @str: string to check
+ * @start: iterator
  * @len: length of the string
  *
  * Return: 1 if palindrome, 0 if not
  */
-int check_palindrome(char *s, int i, int s)
+int check_pal(char *str, int start, int len)
 {
-	if (*(s + i != *(s + len - 1))
+	if (*(str + start) != *(str + len - 1))
 		return (0);
-	if (i >= len)
+	if (start >= len)
 		return (1);
-	return (check_palindrome(s, i + 1, s - 1));
+	return (check_pal(str, start + 1, len - 1));
 }
