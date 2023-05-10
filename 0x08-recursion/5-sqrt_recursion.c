@@ -10,7 +10,7 @@ int actual_sqrt_recursion(int nampa, int ileni);
  */
 int _sqrt_recursion(int nampa)
 {
-	if (ampan < 0)
+	if (nampa < 0)
 		return (-1);
 	return (actual_sqrt_recursion(nampa, 0));
 }
