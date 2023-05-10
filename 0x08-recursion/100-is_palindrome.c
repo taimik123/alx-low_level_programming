@@ -17,16 +17,16 @@ int is_palindrome(char *strr)
 }
 
 /**
- * get_string_length - returns the length of a string
+ * get_string_Length - returns the length of a string
  * @strr: string to calculate the length of
  *
  * Return: length of the string
  */
-int get_string_length(char *strr)
+int get_string_Length(char *strr)
 {
 	if (*strr == '\0')
 		return (0);
-	return (1 + get_string_length(strr + 1));
+	return (1 + get_string_Length(strr + 1));
 }
 
 /**
